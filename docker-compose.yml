@@ -12,8 +12,17 @@ services:
     ports:
      - "8080:8080"
     environment:
-     # 最好使用此设定时区，其它镜像也可以使用，也可以用"TZ=Asia/Shanghai"
-     - "TZ=CST-8"
+     - "TZ=Asia/Shanghai"
+    volumes:
+      # 挂载宿主机时间，保持容器时间正确
+      # - /etc/localtime:/etc/localtime:ro
+      # 挂载宿主机配置文件到容器
+      - ./www/tomcat/conf:/usr/local/tomcat/conf
+      # 挂载宿主机/webapps到容器
+      - ./www/tomcat/webapps:/usr/local/tomcat/webapps
+      # 日志
+      - ./www/tomcat/logs:/usr/local/tomcat/logs
+      - ./temp:/temp
     stdin_open: true
     tty: true
     restart: "no"    

@@ -8,8 +8,7 @@ MAINTAINER terwer "youweics@163.com"
 ENV LANG C.UTF-8
 
 # 设置时区
-# ENV TZ Asia/Shanghai
-ENV TZ CST-8
+ENV TZ Asia/Shanghai
 
 # docker inspect portable-tomcat9 | grep IPAddres
 
