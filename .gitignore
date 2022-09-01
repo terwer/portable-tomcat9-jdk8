@@ -1,1 +1,5 @@
 .idea
+temp
+www/tomcat/logs
+www/tomcat/webapps
+www/tomcat/conf/Catalina
