@@ -148,6 +148,11 @@
                resourceName="UserDatabase"/>
       </Realm>
 
+      <!--
+      See manager
+      <Host name="localhost"  appBase="webapps.dist"
+            unpackWARs="true" autoDeploy="true">
+      -->
       <Host name="localhost"  appBase="webapps"
             unpackWARs="true" autoDeploy="true">
 
@@ -164,6 +169,15 @@
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
+        <!-- kms16_release -->
+        <!--
+        <Context path="/kms" docBase="/UserHome/Documents/java/workspace_v16_release/ekp/WebContent" />
+        -->
+
+        <!-- runjs -->
+        <!--
+        <Context path="/runjs" docBase="/UserHome/Documents/mydocs/RunJS/RunJS/webapp" />
+        -->
       </Host>
     </Engine>
   </Service>
