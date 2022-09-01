@@ -1,0 +1,19 @@
+# docker-compose --log-level INFO up --build portable-tomcat9
+# docker-compose --log-level INFO up
+
+version: '3'
+services:
+  portable-tomcat9:
+    image: terwer/tomcat9:9.0.65
+    container_name: portable-tomcat9
+    build:
+     context: .
+     dockerfile: Dockerfile
+    ports:
+     - "8080:8080"
+    environment:
+     # 最好使用此设定时区，其它镜像也可以使用，也可以用"TZ=Asia/Shanghai"
+     - "TZ=CST-8"
+    stdin_open: true
+    tty: true
+    restart: "no"    
