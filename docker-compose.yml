@@ -23,6 +23,14 @@ services:
       # 日志
       - ./www/tomcat/logs:/usr/local/tomcat/logs
       - ./temp:/temp
+      # - /Users/terwer/Documents/java/workspace_v16_release/ekp/WebContent:/UserHome/Documents/java/workspace_v16_release/ekp/WebContent
+      # - /Users/terwer/Documents/mydocs/RunJS/RunJS/webapp:/UserHome/Documents/mydocs/RunJS/RunJS/webapp
     stdin_open: true
     tty: true
-    restart: "no"    
+    restart: "no"
+    networks:
+      - local-dev
+
+networks:
+  local-dev:
+    external: true
